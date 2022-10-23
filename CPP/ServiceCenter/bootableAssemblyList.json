@@ -1,0 +1,44 @@
+{   
+	 "items":[
+
+	  {
+		 "name":"",
+		 "params":["LogTower.dll"],
+		 "ref":true,
+		 "daemon":false
+	  },
+      {
+		 "name":"js/app.js",
+		 "params":[],
+		 "ref":false,
+		 "daemon":true,
+		 "VMPath":"D:/Programs/node-v16.14.2-win-x64/node.exe"
+	 },
+	 {
+		 "name":"",
+		 "params":["APIProvider.dll"],
+		 "ref":true,
+		 "daemon":false
+	 }
+
+	],
+
+	"serviceCenter":{
+		"port":8040,
+		"ip":"127.0.0.1",
+		"bufferSize":8192
+	},
+	"nodejs":{
+		"ip":"127.0.0.1",
+		"port":5051,
+		"orderedAction":[
+			{"action":"services","command":9},
+			{"action":"config","command":20},
+			{"action":"bootApp","command":21}
+		]
+	}
+
+	
+
+ 
+}

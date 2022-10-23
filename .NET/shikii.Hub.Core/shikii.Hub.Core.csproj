@@ -1,0 +1,19 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFrameworks>netstandard2.1</TargetFrameworks>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="Serilog\**" />
+    <EmbeddedResource Remove="Serilog\**" />
+    <None Remove="Serilog\**" />
+  </ItemGroup>
+   <PropertyGroup Condition=" '$(TargetFramework)' == 'net45' ">
+		<DefineConstants>$(DefineConstants);ATOMIC_APPEND;HRESULTS</DefineConstants>
+   </PropertyGroup>
+
+	<PropertyGroup Condition=" '$(TargetFramework)' != 'net45'  ">
+		<DefineConstants>$(DefineConstants);OS_MUTEX</DefineConstants>
+	</PropertyGroup>
+</Project>
