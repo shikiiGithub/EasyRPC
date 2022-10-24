@@ -1,8 +1,8 @@
 # EasyRPC
 
-I don't want to use something like Apache Thrift or Google gRPC,because they are so heavy , I only want a simple and light  RPC library ,so i've made it for me.
+I don't want to use something like Apache Thrift or Google gRPC,because they are so heavy , I only want a simple and light  RPC library ,so i've made it for me. 
 
-## Futures 
+## Features 
 
 + **Roles**
 
