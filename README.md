@@ -6,9 +6,9 @@ I don't want to use something like Apache Thrift or Google gRPC,because they are
 
 + **Roles**
 
-  It can use as a RPC , Registering  Service and Discovery Other Services.
+  It can be used as a RPC , Registering  Service and Discovery Other Services.
 
-+ Architecture
++ **Architecture**
 
   Base on TCP/IP protocol , one Service Center and many services .
 
@@ -16,7 +16,7 @@ I don't want to use something like Apache Thrift or Google gRPC,because they are
 
   Don't need to learn some concepts ,you just need recalling your service name , method ,Args that you need to pass they to the method you want to call.
 
-+ **Support 4 Programing language Client**
++ **Support 4 Programming Language Client**
 
   + C++ ( including ServiceCenter and ServiceHost )
 

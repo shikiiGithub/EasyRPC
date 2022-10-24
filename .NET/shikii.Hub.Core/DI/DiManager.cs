@@ -21,36 +21,6 @@ namespace shikii.Hub.DI
 
         public DiManager()
         {
-
-            bool isWin = System.Runtime.InteropServices.RuntimeInformation
-                                             .IsOSPlatform(OSPlatform.Windows);
-            bool isLinux = System.Runtime.InteropServices.RuntimeInformation
-                                            .IsOSPlatform(OSPlatform.Linux);
-            String currentExeDirPath =  Path.GetDirectoryName(this.GetType().Assembly.Location) ;
-            String _7zExeZipFilePath = null;
-            String _7zExeFileName = null;
-             
-            if (isWin)
-            {
-
-                _7zExeZipFilePath = currentExeDirPath + "/Assets/7z_Win86.zip";
-                _7zExeFileName = "7z.exe";
-                
-            }
-            else if(isLinux)
-            {
-                _7zExeZipFilePath = currentExeDirPath + "/Assets/7z_linux86.zip";
-                _7zExeFileName = "7z";
-            }
-            if(!File.Exists(_7zExeZipFilePath))
-            {
-                throw new Exception("请确保目录下有Assets 文件夹！");
-            }
-            if (!File.Exists(Path.Combine(currentExeDirPath, _7zExeFileName))) 
-            {
-                FileSystemManager.UnZip(_7zExeZipFilePath, currentExeDirPath, "");
-               
-            }
             container = new Container();  
             ExtensionFuncs.ThisDiManager = this;
             this.RegisterInstance<DiManager>(this);
