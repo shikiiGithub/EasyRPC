@@ -6,7 +6,7 @@ const NodeJsClient = require('./NodeJsClient')
 var httpIp = "127.0.0.1" ;
 var httpPort = 5051 ;
 let orderedActions = [] ;
-const _APIProviderService = "APIProvider" ;
+const _APIProviderService = "" ;
 let _APIProviderServiceOnline = false ;
     /**
      * @type {NodeJsClient}
@@ -17,6 +17,7 @@ let conf = thisHost.conf;
 httpIp = conf.nodejs.ip ;
 httpPort = conf.nodejs.port ;
 orderedActions = conf.nodejs.orderedAction ;
+_APIProviderService = conf.nodejs.backEndServiceName ;
 thisHost.prepareEvent([_APIProviderService],'NodeJs WebApi Server',(serviceStatusInfo)=>{
     if(serviceStatusInfo[_APIProviderService] != null && serviceStatusInfo[_APIProviderService] != undefined)
     {

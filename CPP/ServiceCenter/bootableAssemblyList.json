@@ -31,6 +31,7 @@
 	"nodejs":{
 		"ip":"127.0.0.1",
 		"port":5051,
+                                "backEndServiceName":"APIProvider",
 		"orderedAction":[
 			{"action":"services","command":9},
 			{"action":"config","command":20},

@@ -242,8 +242,10 @@ namespace shikii.Hub.Networking
         void RegisterService(String clientId,byte[]buf)
         {
             uint nLen =TCPBase.FetchDataLenByts(buf);
-            String serviceName = this.ProvideString(buf, TCPBase.MARKPOSITION, (int)nLen-TCPBase.MARKPOSITION);
-            if(!RegisteredServices.ContainsKey(serviceName))
+            String json = this.ProvideString(buf, TCPBase.MARKPOSITION, (int)nLen-TCPBase.MARKPOSITION);
+            JsonData data = JsonMapper.ToObject(json);
+            String serviceName = (String)data["Name"];
+            if (!RegisteredServices.ContainsKey(serviceName))
             {
                RegisteredServices.Add(serviceName, clientId);
                 this.NotifyServiceChanged(serviceName, true);
