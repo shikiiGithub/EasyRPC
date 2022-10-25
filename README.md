@@ -34,13 +34,13 @@ I don't want to use something like Apache Thrift or Google gRPC,because they are
 
 ### Step 1 : Compile your ServiceCenter
 
-You can compile the dotnet code to use ServiceCenter which means a TCP Server part,but I highly recommend you to compile the ServiceCenter implemented in C++.You can find that in  **CPP/ServiceCenter** , that is a cmake project which means you must install cmake and c++ compiler and config they to compile that part. After compiling , you can get an executable app (for windows,you'll get a **ServiceCenter.exe** file and for Linux , you'll get a **ServiceCenter** named file).
+You can compile the dotnet code to get a  ServiceCenter which means a TCP Server part,but I highly recommend you to compile the ServiceCenter implemented in C++.You can find that in  **CPP/ServiceCenter** , that is a cmake project which means you must install cmake and c++ compiler and config they to compile that part. After compiling , you can get an executable app (for windows,you'll get a **ServiceCenter.exe** file and for Linux , you'll get a **ServiceCenter** named file).
 
 ### Step 2 : Prepare your Client A 
 
 Here,  I prefer to use dotnet client  which I can use my favorite programing language **C#**  as my Client A . 
 
-+ 1st ,  Go to  **.NET/shikii.Hub.Core**  folder and compile it into a Assembly DLL which our C# client A will reference it.
++ 1st ,  Go to  **.NET/shikii.Hub.Core**  folder and compile it into a Assembly DLL which our C# client A will references it.
 
 + 2nd , Create a dotnet Console App which can use VSCode or Visual Studio to write your code.
 
@@ -125,11 +125,12 @@ Here,  I prefer to use dotnet client  which I can use my favorite programing lan
                   // register your service to ServiceCenter
                   targetClassInstance.ThisHost.RegisterService(serviceName);
                   targetClassInstance.Boot(ThisDiManager);
+                  Console.ReadLine() ;
           }
   
   
       }
   }
   ```
-
+  
    
